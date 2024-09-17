@@ -2,23 +2,20 @@
 #      Attention si la chaîne est invalide, un message d'erreur est attendu.
 
 country = input("Pays concerné ? ")
-code_medals = input("Chaine représentant les médailles ? ")
+medals = input("Chaine représentant les médailles ? ")
 G = 0
 S = 0
 B = 0
 
-for j in code_medals:
-    if j == "G":
+for i in range (len(medals)):
+    if medals[i] == "G":
         G += 1
-    elif j == "S":
+    elif medals[i] == "S":
         S += 1
-    elif j == "B":
+    elif medals[i] == "B":
         B += 1
-    if j == code_medals[len(code_medals) - 1]:
-        print(f"{country}:\n- {G} OR\n- {S} Argent\n- {B} Bronze\n")
     else:
-        print("Ceci est une chaîne invalide.")
+        print("Ceci est une chaine invalide.")
         break
-
-
-
+    if i == (len(medals) - 1):
+        print(f"{country}:\n- {G} Or\n- {S} Argent\n- {B} Bronze")
