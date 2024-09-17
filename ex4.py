@@ -3,30 +3,34 @@
 #        et affiche le résultat au format "XX km".
 #        Assurez une gestion du pourcentage valide au cours de votre programme (% toujours dans [0 ; 100]).
 
-battery_level = float(input("Quelle est votre pourcentage de batterie ? "))
+battery_pourcentage = float(input("Pourcentage de batterie ? "))
 
-while   battery_level < 0 or battery_level > 100 :
+if battery_pourcentage < 0 or battery_pourcentage > 100:
+    battery_pourcentage = float(input("Pourcentage de batterie ? "))
 
-    print("Votre niveau de batterie est erronée")
-    battery_level = float(input("Reentrez le bon niveau de batterie : "))
+if battery_pourcentage == 0:
+    print(f"La batterie est vide")
 
-if 50 < battery_level <= 100 :
-    distance = battery_level * 2 
+elif battery_pourcentage >= 50:
+    distance = (battery_pourcentage - 50) * 2 + (25 * 0.5) + (15 * 1) + (5 * 2.5) + (5 * 6)
+    print(f"{distance:.1f} km")
 
-if 25 < battery_level <= 50 :
-    distance = battery_level * 0.5 
+elif battery_pourcentage >= 25:
+    distance = (battery_pourcentage - 25) * 0.5 + (15 * 1) + (5 * 2.5) + (5 * 6)
+    print(f"{distance:.1f} km")
 
-if 10 < battery_level <= 25 :
-    distance = battery_level * 1 
+elif battery_pourcentage >= 10:
+    distance = (battery_pourcentage - 10) + (5 * 2.5) + (5 * 6)
+    print(f"{distance:.1f} km")
 
-if 5 < battery_level <= 10 :
-    distance = battery_level * 2.5 
+elif battery_pourcentage >= 5:
+    distance = (battery_pourcentage - 5) * 2.5 + (5 * 6)
+    print(f"{distance:.1f} km")
 
-if 0 < battery_level <= 5 :
-    distance = battery_level * 6 
+else:
+    distance = battery_pourcentage * 6
+    print(f"{distance:.1f} km")
 
-if battery_level == 0 :
-    print("La batterie est vide.")
 
-print(f"La distance possible est de {distance} km.")
+
     
