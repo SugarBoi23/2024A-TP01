@@ -7,4 +7,4 @@ sport = input("Dans quelle discipline ? ")
 category = input("Dans une catégorie spécifique ? ")
 record = input("Quel est le record ? ")
 
-print(f"\nNouveau Record:\n--------------------\n{date} - {sport} - {category}:\n\t{athlete} ({country}) - {record}\n")
+print(f"\nNouveau Record:\n--------------------\n{date} - {sport} - {category}:\n\t{athlete} ({country}) - {record}")
