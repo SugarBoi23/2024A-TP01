@@ -5,7 +5,7 @@
 
 battery_pourcentage = float(input("Pourcentage de batterie ? "))
 
-if battery_pourcentage < 0 or battery_pourcentage > 100:
+while battery_pourcentage < 0 or battery_pourcentage > 100:
     battery_pourcentage = float(input("Pourcentage de batterie ? "))
 
 if battery_pourcentage == 0:
